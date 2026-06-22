@@ -2,19 +2,38 @@ package conta_bancaria;
 
 import java.util.Scanner;
 
+import conta_bancaria.model.Conta;
 import conta_bancaria.util.Cores;
 
 public class Menu {
-
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
 		
-		int numero;
+		int opcao;
+		
+		/* Instanciar objetos da classe conta */
+		Conta c1 = new Conta(1,123,1,"Manuella", 200000.00f);
+		c1.visualizar();
+		
+		Conta c2 = new Conta(2,321,2,"Bella", 200000.00f);
+		c2.visualizar();
+		
+		/* Alteração(set) do saldo:
+		c1.setSaldo(350000.00f);
+		c1.visualizar();*/
+		
+		/*If ternário > condição ? ação se for verdadeiro : ação se for falso */
+		System.out.println("\nSacar R$1.000,00 da conta c1: " + (c1.sacar(1000.00f) 
+				? "Saque efetuado com sucesso" : "Saldo insuficiente"));
+		c1.visualizar();
+		
+		c1.depositar(9000.00f); 
+		c1.visualizar();
+		
 		char continua = 'S';
 		
 		while(continua == 'S') {
-			
 			System.out.println(Cores.TEXT_YELLOW_BRIGHT + Cores.ANSI_CYAN_BACKGROUND);
 			System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ ");
 			System.out.println("│				     	 ");
@@ -33,13 +52,13 @@ public class Menu {
 			System.out.println("┖━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ ");
 			System.out.println(""+Cores.TEXT_RESET);
 			System.out.print(" ➤ Digite a opção desejada: ");
-				numero = leia.nextInt();
+				opcao = leia.nextInt();
 			
-			if(numero == 0) {
+			if(opcao == 0) {
 				encerrar();
 				}
 				
-			switch(numero) {
+			switch(opcao) {
 			case 1:
 				System.out.println("Criar conta");
 				break;
@@ -68,10 +87,7 @@ public class Menu {
 				System.out.println("Opção inválida!");
 				break;
 			}
-				
-				
-			
-			
+						
 			do {
 			System.out.println("➤ Deseja continuar? (S/0) ");
 			continua = leia.next().toUpperCase().charAt(0);
@@ -79,14 +95,7 @@ public class Menu {
 			if ((continua == '0')) {
 				encerrar();
 			}
-		}
-			
-			
-		leia.close();
-
-		
-		
-		
+		}		leia.close();
 		
 	}
 	
@@ -107,6 +116,4 @@ public class Menu {
 		System.exit(0);
 		
 	}
-	
-
 }
