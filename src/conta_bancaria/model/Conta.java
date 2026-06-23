@@ -99,7 +99,6 @@ public class Conta {
 		System.out.printf("%nTipo de conta: %s", tipo);
 		System.out.printf("%nNome do titular: %s", this.titular);
 		System.out.printf("%nSaldo da conta: R$%.2f", this.saldo);
-		System.out.println();
 	}
 	
 	

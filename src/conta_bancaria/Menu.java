@@ -3,6 +3,8 @@ package conta_bancaria;
 import java.util.Scanner;
 
 import conta_bancaria.model.Conta;
+import conta_bancaria.model.ContaCorrente;
+import conta_bancaria.model.ContaPoupanca;
 import conta_bancaria.util.Cores;
 
 public class Menu {
@@ -11,28 +13,40 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 		
 		int opcao;
+		char continua = 'S';
 		
 		/* Instanciar objetos da classe conta */
-		Conta c1 = new Conta(1,123,1,"Manuella", 200000.00f);
-		c1.visualizar();
+		//Conta c1 = new Conta(1,123,1,"Manuella", 200000.00f);
+		//c1.visualizar();
 		
-		Conta c2 = new Conta(2,321,2,"Bella", 200000.00f);
-		c2.visualizar();
+		//Conta c2 = new Conta(2,321,2,"Bella", 200000.00f);
+		//c2.visualizar();
 		
 		/* Alteração(set) do saldo:
 		c1.setSaldo(350000.00f);
 		c1.visualizar();*/
 		
 		/*If ternário > condição ? ação se for verdadeiro : ação se for falso */
-		System.out.println("\nSacar R$1.000,00 da conta c1: " + (c1.sacar(1000.00f) 
-				? "Saque efetuado com sucesso" : "Saldo insuficiente"));
-		c1.visualizar();
+		//System.out.println("\nSacar R$1.000,00 da conta c1: " + (c1.sacar(1000.00f) 
+		//		? "Saque efetuado com sucesso" : "Saldo insuficiente"));
+		//c1.visualizar();
 		
-		c1.depositar(9000.00f); 
-		c1.visualizar();
+		//c2.depositar(9000.00f); 
+		//c2.visualizar();
 		
-		char continua = 'S';
+		//Instanciar Objetos da Classe ContaCorrente
+		ContaCorrente cc1 = new ContaCorrente(3, 789, 1, "Raquel", 200000.00f, 2000.00f);
+		cc1.visualizar();
 		
+		System.out.println("\nSacar R$202.000,00 da conta cc1: " + (cc1.sacar(202000.00f) 
+					? "Saque efetuado com sucesso. Saldo: "+ cc1.getSaldo() : "Saldo insuficiente"));
+		cc1.visualizar();
+
+		ContaPoupanca cp1 = new ContaPoupanca(3, 789, 2, "Raquel", 200000.00f, 31);
+		cp1.visualizar();
+		
+		
+		//////////
 		while(continua == 'S') {
 			System.out.println(Cores.TEXT_YELLOW_BRIGHT + Cores.ANSI_CYAN_BACKGROUND);
 			System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ ");
