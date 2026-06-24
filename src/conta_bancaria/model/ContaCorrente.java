@@ -1,6 +1,6 @@
 package conta_bancaria.model;
 
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta{//Modelo de dados
 	
 	private float limite; //Específico de conta corrente
 
