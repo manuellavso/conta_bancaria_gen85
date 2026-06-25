@@ -18,8 +18,6 @@ public abstract class Conta {
 		this.titular = titular;
 		this.saldo = saldo;
 	}
-	
-	//public Conta () {}
 
 	
 	/*Métodos Get (visualizar os dados) e Set (modificar os dados) */
