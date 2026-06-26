@@ -10,6 +10,7 @@ public interface ContaRepository {
 	public void procurarPorNumero(int numero); //Encontrar uma conta
 	public void atualizar(Conta conta); //Atualiza dados da conta
 	public void deletar(int numero); //Deletar conta
+	public void listarPorTitular(String titular);
 	
 	//Métodos Bancários:
 	public void sacar(int numero, float valor);

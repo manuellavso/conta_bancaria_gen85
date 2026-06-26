@@ -36,6 +36,7 @@ public class Menu {//FUNCIONA COMO FRONTEND
 			System.out.println("│6 💸 Sacar valor			 ");
 			System.out.println("│7 💸 Depositar valor			 ");
 			System.out.println("│8 💸 Transferir valores entre contas     ");
+			System.out.println("│9 💸 Consulta por nome do titular      ");
 			System.out.println("│0 💸 Sair				 ");	
 			System.out.println("┖━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ ");
 			System.out.println(""+Cores.TEXT_RESET);
@@ -46,7 +47,7 @@ public class Menu {//FUNCIONA COMO FRONTEND
 				leia.nextLine();
 			}catch(InputMismatchException e) {
 				opcao = -1;
-				System.out.println("Digite um número inteiro entre 0 e 8.");
+				System.out.println("Digite um número inteiro entre 0 e 9.");
 				leia.nextLine();
 			}
 			
@@ -79,19 +80,26 @@ public class Menu {//FUNCIONA COMO FRONTEND
 				break;
 			case 6:
 				System.out.println("➤ Sacar valor");
+				sacar();
 				break;
 			case 7:
 				System.out.println("➤ Depositar valor");
+				depositar();
 				break;
 			case 8:
 				System.out.println("➤ Transferir valores entre contas");
+				transferir();
+				break;
+			case 9:
+				System.out.println("➤ Consulta por nome do titular");
+				listarPorTitular();
 				break;
 			default:
 				System.out.println(Cores.TEXT_RED+ "Opção inválida! " +Cores.TEXT_RESET);
 				break;
 			}
 						
-			do { System.out.println("➤ Pressione (S) para continuar ou (0) para sair: "); 
+			do { System.out.println("\n➤ Pressione (S) para continuar ou (0) para sair: "); 
 			continua = leia.next().toUpperCase().charAt(0); }
 			while(!(continua == 'S') && !(continua == '0')); 
 			if ((continua == '0')) { 
@@ -155,7 +163,7 @@ public class Menu {//FUNCIONA COMO FRONTEND
 		System.out.print("Digite o saldo da conta: R$");
 		float saldo = leia.nextFloat();
 		
-		//Case lambda
+		
 		switch(tipo) {
 			case 1 ->{ //CC
 				System.out.print("Digite o limite da conta: R$");
@@ -281,5 +289,50 @@ public class Menu {//FUNCIONA COMO FRONTEND
 	}
 	
 	
+	//MÉTODOS BANCÁRIOS:
+	//1. MÉTODO SACAR
+	public static void sacar() {
+		System.out.print("Digite o número da conta: ");
+		int numero = leia.nextInt();
+		
+		System.out.print("Digite o valor do saque: R$");
+		float valorSaque = leia.nextFloat();
+		
+		ContaController.sacar(numero, valorSaque);
+		
+	}
+	
+	//2.MÉTODO DEPOSITAR
+	public static void depositar() {
+		System.out.print("Digite o número da conta: ");
+		int numero = leia.nextInt();
+		
+		System.out.print("Digite o valor do depósito: R$");
+		float valorDeposito = leia.nextFloat();
+		
+		ContaController.depositar(numero, valorDeposito);
+	}
+	
+	//3. MÉTODO TRANSFERIR
+	public static void transferir() {
+		System.out.print("Digite o número da conta de origem: ");
+		int numeroOrigem = leia.nextInt();
+		
+		System.out.print("Digite o número da conta de destino: ");
+		int numeroDestino = leia.nextInt();
+		
+		System.out.print("Digite o valor da transferência: R$");
+		float valorTransferencia = leia.nextFloat();
+		
+		ContaController.transferir(numeroOrigem, numeroDestino, valorTransferencia);
+	}
+	
+	//MÉTODO LISTAR POR TITULAR
+	public static void listarPorTitular() {
+		System.out.print("Digite o nome do titular da conta: ");
+		String titular = leia.nextLine();
+		
+		ContaController.listarPorTitular(titular);
+	}
 	
 }
