@@ -7,18 +7,17 @@
 &#x20;
 
 <div align="center">
+<img src="https://img.shields.io/github/languages/top/manuellavso/conta_bancaria_gen85?style=flat-square" />
 
-<img src="https://img.shields.io/github/languages/top/rafaelq80/conta\_bancaria?style=flat-square" />
+<img src="https://img.shields.io/github/repo-size/manuellavso/conta_bancaria_gen85?style=flat-square" />
 
-<img src="https://img.shields.io/github/repo-size/rafaelq80/conta\_bancaria?style=flat-square" />
+<img src="https://img.shields.io/github/languages/count/manuellavso/conta_bancaria_gen85?style=flat-square" />
 
-<img src="https://img.shields.io/github/languages/count/rafaelq80/conta\_bancaria?style=flat-square" />
+<img src="https://img.shields.io/github/last-commit/manuellavso/conta_bancaria_gen85?style=flat-square" />
 
-<img src="https://img.shields.io/github/last-commit/rafaelq80/conta\_bancaria?style=flat-square" />
+<img src="https://img.shields.io/github/issues/manuellavso/conta_bancaria_gen85?style=flat-square" />
 
-<img src="https://img.shields.io/github/issues/rafaelq80/conta\_bancaria?style=flat-square" />
-
-<img src="https://img.shields.io/github/issues-pr/rafaelq80/conta\_bancaria?style=flat-square" />
+<img src="https://img.shields.io/github/issues-pr/manuellavso/conta_bancaria_gen85?style=flat-square" />
 
 <img src="https://img.shields.io/badge/status-conclu%C3%ADdo-brightgreen" alt="Status: Concluído">
 
@@ -50,7 +49,7 @@
 
 &#x20;
 
-O \*\*Projeto Conta Bancária\*\* é um sistema de gestão projetado para simular e administrar operações financeiras relacionadas a contas bancárias. Oferece funcionalidades como \*\*cadastro\*\*, \*\*consulta\*\*, \*\*atualização\*\* e \*\*remoção\*\* de contas, além de transações como depósitos, saques e transferências.
+O \*\*Projeto Conta Bancária\*\* é um sistema de gestão projetado para simular e administrar operações financeiras relacionadas a contas bancárias. Oferece funcionalidades como \*\*cadastro\*\*, \*\*consulta\*\*, \*\*atualização\*\*, *\*consulta do titular*\* e \*\*remoção\*\* de contas, além de transações como depósitos, saques e transferências.
 
 &#x20;
 
@@ -178,6 +177,10 @@ class Conta {
 
 &#x20; + visualizar() void
 
+&#x20; + encerrar() void
+
+&#x20; + listarPorTitular(tipo: String) void
+
 }
 
 class ContaCorrente {
@@ -220,15 +223,10 @@ ContaPoupanca --> Conta
 
 \## 4. Tela Inicial do Sistema - Menu
 
-&#x20;
-
 <br />
 
-&#x20;
-
 <div align="center">
-
-<img src="https://i.imgur.com/MFK9yXB.png" title="source: imgur.com" width="90%"/>
+<img src="C:\Users\manue\AppData\Roaming\Typora\typora-user-images\image-20260627114733261.png" alt="image-20260627114733261" style="zoom: 200%;" />
 
 </div>
 
@@ -272,13 +270,13 @@ Para executar os códigos localmente, você precisará de:
 
 &#x20;
 
-1\. Clone o repositório do Projeto \[Conta Bancária](https://github.com/rafaelq80/conta\_bancaria) dentro da pasta do \*Workspace\* do Eclipse/STS
+1\. Clone o repositório do Projeto \[Conta Bancária](https://github.com/manuellavso/conta_bancaria_gen85) dentro da pasta do \*Workspace\* do Eclipse/STS
 
 &#x20;
 
 ```bash
 
-git clone https://github.com/rafaelq80/conta\_bancaria.git
+git clone https://github.com/manuellavso/conta_bancaria_gen85
 
 ```
 

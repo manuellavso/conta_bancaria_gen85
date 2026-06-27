@@ -36,7 +36,7 @@ public class Menu {//FUNCIONA COMO FRONTEND
 			System.out.println("│6 💸 Sacar valor			 ");
 			System.out.println("│7 💸 Depositar valor			 ");
 			System.out.println("│8 💸 Transferir valores entre contas     ");
-			System.out.println("│9 💸 Consulta por nome do titular      ");
+			System.out.println("│9 💸 Consulta por nome do titular        ");
 			System.out.println("│0 💸 Sair				 ");	
 			System.out.println("┖━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ ");
 			System.out.println(""+Cores.TEXT_RESET);
